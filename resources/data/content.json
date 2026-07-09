@@ -1,0 +1,11 @@
+{
+    "welcome": {
+        "title": "Ciao",
+        "subtitle": "Non potevo fare un segnaposto normale.\nPer questo, ho deciso di associarti ad un argomento che ha segnato i miei studi!",
+        "cta": "Tocca lo schermo per scoprire il tuo argomento"
+    },
+    "topic": {
+        "description": "Che cos'è?",
+        "dedication": "Perché l'ho scelto per te?" 
+    }
+}

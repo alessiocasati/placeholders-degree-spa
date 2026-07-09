@@ -1,0 +1,101 @@
+{
+    "guests": {
+        "adele": {
+            "name": "Adele",
+            "concept": "concept",
+            "explanation": "explanation",
+            "dedication": "dedication"
+        },
+        "brunella": {
+            "name": "Bruny",
+            "concept": "concept",
+            "explanation": "explanation",
+            "dedication": "dedication"
+        },
+        "cugina-chiara": {
+            "name": "Chiara",
+            "concept": "concept",
+            "explanation": "explanation",
+            "dedication": "dedication"
+        },
+        "cugina-jessica": {
+            "name": "Jessy",
+            "concept": "concept",
+            "explanation": "explanation",
+            "dedication": "dedication"
+        },
+        "cugina-susanna": {
+            "name": "Susi",
+            "concept": "concept",
+            "explanation": "explanation",
+            "dedication": "dedication"
+        },
+        "cugina-valentina": {
+            "name": "Vale",
+            "concept": "concept",
+            "explanation": "explanation",
+            "dedication": "dedication"
+        },
+        "dario": {
+            "name": "Dario",
+            "concept": "concept",
+            "explanation": "explanation",
+            "dedication": "dedication"
+        },
+        "mamma": {
+            "name": "Mamma",
+            "concept": "concept",
+            "image": "../../resources/img/turing-machine.png",
+            "explanation": "explanation",
+            "dedication": "dedication"
+        },
+        "nonna": {
+            "name": "Nonna",
+            "concept": "concept",
+            "explanation": "explanation",
+            "dedication": "dedication"
+        },
+        "papà": {
+            "name": "Papà",
+            "concept": "concept",
+            "explanation": "explanation",
+            "dedication": "dedication"
+        },
+        "valter": {
+            "name": "Valter",
+            "concept": "concept",
+            "explanation": "explanation",
+            "dedication": "dedication"
+        },
+        "zia-daniela": {
+            "name": "Zia Dany",
+            "concept": "concept",
+            "explanation": "explanation",
+            "dedication": "dedication"
+        },
+        "zia-elena": {
+            "name": "Zia Elena",
+            "concept": "concept",
+            "explanation": "explanation",
+            "dedication": "dedication"
+        },
+        "zia-rajka": {
+            "name": "Zia Rajka",
+            "concept": "concept",
+            "explanation": "explanation",
+            "dedication": "dedication"
+        },
+        "zio-alberto": {
+            "name": "Zio Alberto",
+            "concept": "concept",
+            "explanation": "explanation",
+            "dedication": "dedication"
+        },
+        "zio-pata": {
+            "name": "Zio Pata",
+            "concept": "concept",
+            "explanation": "explanation",
+            "dedication": "dedication"
+        }
+    }
+}
