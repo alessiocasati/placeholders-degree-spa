@@ -41,7 +41,7 @@ body {
 .welcome-title {
     font-size: 3rem;
     font-weight: 800;
-    color: #b4ff4a;
+    color: #1e293b;
     margin-bottom: 1rem;
 }
 
@@ -49,7 +49,7 @@ body {
     font-size: 1.2rem;
     white-space: pre-line; 
     line-height: 1.5;
-    color: #ffffff;
+    color: #475569;
 }
 
 .welcome-cta {
@@ -57,7 +57,7 @@ body {
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
-    color: #c0fd6a;
+    color: #005822;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -115,7 +115,7 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    background-color: #252525; /* Colore di sfondo base */
+    background-color: #f4f4f9; /* Colore di sfondo base */
 }
 
 /* Livello di sfondo che contiene i blob animati */
@@ -133,7 +133,7 @@ body {
     height: 24rem; /* Equivalente a h-96 in Tailwind */
     width: 24rem;
     border-radius: 50%;
-    background-color: #365e4561; /* Regola il colore qui */
+    background-color: #00582261; /* Regola il colore qui */
     filter: blur(64px); /* Equivalente a blur-3xl */
     animation: aurora-1 20s ease-in-out infinite;
 }
@@ -146,7 +146,7 @@ body {
     height: 24rem;
     width: 24rem;
     border-radius: 50%;
-    background-color: rgba(142, 255, 98, 0.171); /* Regola il colore qui */
+    background-color: rgba(0, 124, 10, 0.5); /* Regola il colore qui */
     filter: blur(64px);
     animation: aurora-2 20s ease-in-out infinite;
 }
@@ -180,7 +180,7 @@ body {
 .topic-image-wrapper {
     width: 400px;
     height: 250px;
-    border-radius: 10%;
+    border-radius: 20%;
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     background-color: white; /* Utile se l'immagine ha lo sfondo trasparente */
@@ -203,13 +203,13 @@ body {
 .topic-title {
     font-size: 2.2rem;
     font-weight: 800;
-    color: #b4ff4a;
+    color: #1e293b;
     margin-bottom: 3rem;
 }
 
 .topic-section h3 {
     font-size: 0.9rem;
-    color: #d9ffa3;
+    color: #005822;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 0.5rem;
@@ -217,7 +217,7 @@ body {
 
 .topic-section p {
     font-size: 1.1rem;
-    color: #ffffff;
+    color: #475569;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -225,7 +225,7 @@ body {
 .topic-dedication {
     font-style: italic;
     font-weight: 600;
-    color: #ffffff !important;
+    color: #1e293b !important;
 }
 
 /* --- ANIMAZIONI SPECIFICHE TOPIC --- */
