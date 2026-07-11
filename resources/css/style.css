@@ -2,6 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Applica il font a tutta la pagina */
 body {
     font-family: 'Inter', sans-serif;
@@ -10,6 +16,21 @@ body {
 /* ===================================================== *
 * Welcome Animation (From 21st.dev)                      *
 * ====================================================== */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05); /* Ingrandisce leggermente la scritta */
+        opacity: 1;           /* Riduce leggermente l'opacità per accentuare l'effetto */
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
 .welcome-card {
     background: transparent;
@@ -20,7 +41,7 @@ body {
 .welcome-title {
     font-size: 3rem;
     font-weight: 800;
-    color: #1e293b;
+    color: #b4ff4a;
     margin-bottom: 1rem;
 }
 
@@ -28,7 +49,7 @@ body {
     font-size: 1.2rem;
     white-space: pre-line; 
     line-height: 1.5;
-    color: #475569;
+    color: #ffffff;
 }
 
 .welcome-cta {
@@ -36,9 +57,14 @@ body {
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
-    color: #005822;
+    color: #c0fd6a;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.pulse-text{
+    display: inline-block;
+    animation: pulse 2s ease-in-out infinite;
 }
 
 /* Animazioni base tradotte dal React */
@@ -89,7 +115,7 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    background-color: #f4f4f9; /* Colore di sfondo base */
+    background-color: #252525; /* Colore di sfondo base */
 }
 
 /* Livello di sfondo che contiene i blob animati */
@@ -107,7 +133,7 @@ body {
     height: 24rem; /* Equivalente a h-96 in Tailwind */
     width: 24rem;
     border-radius: 50%;
-    background-color: #00582261; /* Regola il colore qui */
+    background-color: #365e4561; /* Regola il colore qui */
     filter: blur(64px); /* Equivalente a blur-3xl */
     animation: aurora-1 20s ease-in-out infinite;
 }
@@ -120,7 +146,7 @@ body {
     height: 24rem;
     width: 24rem;
     border-radius: 50%;
-    background-color: rgba(0, 124, 10, 0.5); /* Regola il colore qui */
+    background-color: rgba(142, 255, 98, 0.171); /* Regola il colore qui */
     filter: blur(64px);
     animation: aurora-2 20s ease-in-out infinite;
 }
@@ -152,9 +178,9 @@ body {
 
 /* Stile dell'immagine (Tonda tipo foto profilo) */
 .topic-image-wrapper {
-    width: 250px;
+    width: 400px;
     height: 250px;
-    border-radius: 50%;
+    border-radius: 10%;
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     background-color: white; /* Utile se l'immagine ha lo sfondo trasparente */
@@ -168,7 +194,7 @@ body {
 
 /* Stile dei testi */
 .topic-text-wrapper {
-    margin-top: 2rem;
+    margin-top: 4rem;
     text-align: center;
     max-width: 500px;
     width: 100%; /* Si adatta perfettamente al mobile */
@@ -177,13 +203,13 @@ body {
 .topic-title {
     font-size: 2.2rem;
     font-weight: 800;
-    color: #1e293b;
-    margin-bottom: 1.5rem;
+    color: #b4ff4a;
+    margin-bottom: 3rem;
 }
 
 .topic-section h3 {
     font-size: 0.9rem;
-    color: #005822;
+    color: #d9ffa3;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 0.5rem;
@@ -191,7 +217,7 @@ body {
 
 .topic-section p {
     font-size: 1.1rem;
-    color: #475569;
+    color: #ffffff;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -199,7 +225,7 @@ body {
 .topic-dedication {
     font-style: italic;
     font-weight: 600;
-    color: #1e293b !important;
+    color: #ffffff !important;
 }
 
 /* --- ANIMAZIONI SPECIFICHE TOPIC --- */
@@ -207,7 +233,7 @@ body {
 /* 1. L'immagine parte grande in mezzo allo schermo e sale */
 @keyframes slideUpImage {
     0% {
-        transform: translateY(120px) scale(1.5);
+        transform: translateY(120px) scale(2);
     }
     100% {
         transform: translateY(0) scale(1);
@@ -215,7 +241,7 @@ body {
 }
 
 .animate-slide-up {
-    animation: slideUpImage 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation: slideUpImage 3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 /* 2. Il testo appare dal basso verso l'alto in ritardo */

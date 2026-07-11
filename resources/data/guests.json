@@ -45,7 +45,6 @@
         "mamma": {
             "name": "Mamma",
             "concept": "concept",
-            "image": "../../resources/img/turing-machine.png",
             "explanation": "explanation",
             "dedication": "dedication"
         },
@@ -55,9 +54,10 @@
             "explanation": "explanation",
             "dedication": "dedication"
         },
-        "papà": {
+        "papa": {
             "name": "Papà",
-            "concept": "concept",
+            "concept": "Macchina di Turing",
+            "image": "./resources/img/turing-machine.png",
             "explanation": "explanation",
             "dedication": "dedication"
         },

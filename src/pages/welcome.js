@@ -16,8 +16,10 @@ export function renderWelcome(guestName, content) {
                         ${content.subtitle}
                     </p>
                     
-                    <p class="welcome-cta animate-fade-in delay-3 pulse-text">
-                        ${content.cta}
+                    <p class="welcome-cta animate-fade-in delay-3">
+                        <span class="pulse-text">
+                            ${content.cta}
+                        </span>
                     </p>
                 </div>
             </div>

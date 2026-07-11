@@ -20,13 +20,13 @@ async function loadApp() {
 
     try {
         // fetch guests data
-        const guestResponse = await fetch('../../resources/data/guests.json');
+        const guestResponse = await fetch('./resources/data/guests.json');
         if (!guestResponse.ok) throw new Error("Errore nel caricamento dei dati");
         const data = await guestResponse.json();
         const guest = data.guests[hash];
 
         // fetch page content data
-        const contentResponse = await fetch('../../resources/data/content.json');
+        const contentResponse = await fetch('./resources/data/content.json');
         if (!contentResponse.ok) throw new Error("Errore nel caricamento dei dati");
         const content = await contentResponse.json();
 
