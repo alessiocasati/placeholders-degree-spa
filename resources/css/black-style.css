@@ -178,7 +178,7 @@ body {
 
 /* Stile dell'immagine (Tonda tipo foto profilo) */
 .topic-image-wrapper {
-    width: 400px;
+    width: 300px;
     height: 250px;
     border-radius: 20%;
     overflow: hidden;

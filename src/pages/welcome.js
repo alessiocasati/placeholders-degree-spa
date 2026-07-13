@@ -8,6 +8,11 @@ export function renderWelcome(guestName, content) {
 
             <div class="aurora-content">
                 <div class="welcome-card">
+
+                    <div class="avatar-wrapper animate-avatar">
+                        <img src="${content.avatar}" alt="Alessio" class="avatar-img">
+                    </div>
+
                     <h1 class="welcome-title animate-fade-in delay-1">
                         ${content.title} ${guestName}!
                     </h1>

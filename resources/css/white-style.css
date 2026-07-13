@@ -1,6 +1,6 @@
 /* CSS Styles */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
 
 *, *::before, *::after {
     margin: 0;
@@ -8,27 +8,60 @@
     box-sizing: border-box;
 }
 
-/* Applica il font a tutta la pagina */
+/* ===================================================== *
+ * Design tokens                                          *
+ * ====================================================== */
+
+:root {
+    /* palette — warm ivory, deep ink, quiet gold/sage/rose accents */
+    --color-bg: #faf6f0;
+    --color-ink: #2a241d;
+    --color-muted: #6e6255;
+    --color-gold: #b08d57;
+    --color-sage: #9e974ab9;
+    --color-rose: #c89aa0;
+    --color-line: rgba(42, 36, 29, 0.1);
+
+    --font-display: 'Fraunces', 'Iowan Old Style', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+html {
+    /* Evita che iOS ridimensioni il testo in orizzontale e stabilizza lo scroll */
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    overflow-x: hidden; /* Continua a bloccare movimenti laterali e barre bianche */
+    overflow-y: auto;
+    min-height: 100dvh; /* invece di un'altezza fissa, si adatta e permette scroll naturale */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 /* ===================================================== *
-* Welcome Animation (From 21st.dev)                      *
-* ====================================================== */
+ * Welcome Animation                                      *
+ * ====================================================== */
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
+    0%, 100% {
         opacity: 1;
+        text-shadow: 0 0 0 rgba(176, 141, 87, 0);
+        transform: scale(1);
     }
     50% {
-        transform: scale(1.05); /* Ingrandisce leggermente la scritta */
-        opacity: 1;           /* Riduce leggermente l'opacità per accentuare l'effetto */
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
+        opacity: 0.92;
+        text-shadow: 0 0 18px rgba(176, 141, 87, 0.35);
+        transform: scale(1.05);
     }
 }
 
@@ -39,55 +72,61 @@ body {
 }
 
 .welcome-title {
+    font-family: var(--font-display);
     font-size: 3rem;
-    font-weight: 800;
-    color: #1e293b;
-    margin-bottom: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
+    margin-top: 2rem;
+    margin-bottom: 1.25rem;
 }
 
 .welcome-subtitle {
-    font-size: 1.2rem;
-    white-space: pre-line; 
-    line-height: 1.5;
-    color: #475569;
+    font-size: 1.1rem;
+    font-weight: 400;
+    white-space: pre-line;
+    line-height: 1.6;
+    color: var(--color-muted);
 }
 
 .welcome-cta {
     margin-top: 4rem;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     cursor: pointer;
-    color: #005822;
+    color: var(--color-gold);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
 }
 
-.pulse-text{
+.welcome-cta:hover {
+    letter-spacing: 3px;
+    color: var(--color-ink);
+}
+
+.pulse-text {
     display: inline-block;
-    animation: pulse 2s ease-in-out infinite;
+    animation: pulse 3.2s ease-in-out infinite;
 }
 
-/* Animazioni base tradotte dal React */
+/* Soft ambient drift, in place of the old high-contrast blobs */
 @keyframes aurora-1 {
-    0% { transform: translate(0%, 0%) scale(1); }
-    25% { transform: translate(20%, -20%) scale(1.2); }
-    50% { transform: translate(-20%, 20%) scale(0.8); }
-    75% { transform: translate(10%, -10%) scale(1.1); }
+    0%   { transform: translate(0%, 0%) scale(1); }
+    50%  { transform: translate(-8%, 10%) scale(1.15); }
     100% { transform: translate(0%, 0%) scale(1); }
 }
 
 @keyframes aurora-2 {
-    0% { transform: translate(0%, 0%) scale(1); }
-    25% { transform: translate(-20%, 20%) scale(1.1); }
-    50% { transform: translate(20%, -20%) scale(0.9); }
-    75% { transform: translate(-10%, 10%) scale(1.2); }
+    0%   { transform: translate(0%, 0%) scale(1); }
+    50%  { transform: translate(8%, -10%) scale(1.1); }
     100% { transform: translate(0%, 0%) scale(1); }
 }
 
 @keyframes fadeInUp {
     0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(24px);
     }
     100% {
         opacity: 1;
@@ -96,36 +135,37 @@ body {
 }
 
 .animate-fade-in {
-    opacity: 0; /* Parte invisibile */
-    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    opacity: 0;
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Ritardi per far comparire gli elementi uno dopo l'altro */
 .delay-1 { animation-delay: 0.2s; }
 .delay-2 { animation-delay: 0.8s; }
 .delay-3 { animation-delay: 2.5s; }
 
-/* Contenitore principale a tutto schermo */
 .aurora-container {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    background-color: #f4f4f9; /* Colore di sfondo base */
+    /* prima: justify-content veniva impostato due volte (center poi flex-start), teniamo solo la seconda */
+    justify-content: flex-start;
+    min-height: 100dvh; /* prima: height: 100vh — fisso e tagliava il contenuto su mobile */
+    width: 100%; /* prima: 100vw — poteva causare overflow orizzontale con le scrollbar */
+    overflow-y: visible; /* prima: overflow: hidden — tagliava i testi che eccedevano */
+    overflow-x: hidden;
+    background-color: var(--color-bg);
+    padding: 8vh 1.25rem calc(3rem + env(safe-area-inset-bottom)) 1.25rem; /* padding top ridotto e bottom con safe-area per notch/home bar */
+    box-sizing: border-box;
 }
 
-/* Livello di sfondo che contiene i blob animati */
 .aurora-background {
     position: absolute;
     inset: 0;
     z-index: 0;
 }
 
-/* Primo blob (Colore primario, es. Azzurro) */
+/* Gauzy, low-opacity glows rather than solid discs */
 .aurora-blob-1 {
     position: absolute;
     top: -25%;
@@ -133,12 +173,12 @@ body {
     height: 24rem; /* Equivalente a h-96 in Tailwind */
     width: 24rem;
     border-radius: 50%;
-    background-color: #00582261; /* Regola il colore qui */
+    background-color: var(--color-gold); /* Regola il colore qui */
+    opacity: 0.45; /* Ridotta opacità per un effetto più delicato */
     filter: blur(64px); /* Equivalente a blur-3xl */
     animation: aurora-1 20s ease-in-out infinite;
 }
 
-/* Secondo blob (Colore secondario, es. Viola o Grigio) */
 .aurora-blob-2 {
     position: absolute;
     bottom: -25%;
@@ -146,44 +186,119 @@ body {
     height: 24rem;
     width: 24rem;
     border-radius: 50%;
-    background-color: rgba(0, 124, 10, 0.5); /* Regola il colore qui */
+    background-color: var(--color-sage);
     filter: blur(64px);
+    opacity: 0.65;
     animation: aurora-2 20s ease-in-out infinite;
 }
 
-/* Livello dei contenuti in primo piano */
 .aurora-content {
     position: relative;
     z-index: 10;
     text-align: center;
+    width: 100%;
 }
 
-/* ===================================================== *
-* Topic Animation                                        *
-* ====================================================== */
+/* =====================================================  *
+ * Avatar Animation                                       *
+ * ====================================================== */
 
-/* --- STRUTTURA SCHERMATA TOPIC --- */
+/* --- STILE DELL'AVATAR (TIMELINE IN 2 FASI) --- */
+.avatar-wrapper {
+    margin: 0 auto 1rem auto; 
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.4));
+    
+    /* Parte nascosto e grande (Fase 1) */
+    opacity: 0;
+    height: clamp(180px, 34vh, 320px); /* prima: 320px fisso — su schermi bassi spingeva i testi fuori viewport */
+    
+    /* L'intera sequenza dura 3.5 secondi */
+    animation: avatarCinematic 5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.avatar-img {
+    height: 100%;
+    width: auto;
+    max-width: 90vw; /* evita overflow orizzontale su schermi molto stretti */
+    object-fit: contain; 
+}
+
+@keyframes avatarCinematic {
+    /* -- FASE 1: COMPARSA ELASTICA (0s - 0.5s) -- */
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(50px);
+        height: clamp(180px, 34vh, 320px); /* Rimane grande, coerente col wrapper */
+    }
+    10% {
+        opacity: 1;
+        transform: scale(1.05) translateY(-10px);
+        height: clamp(180px, 34vh, 320px);
+    }
+    15% {
+        transform: scale(1) translateY(0);
+        height: clamp(180px, 34vh, 320px);
+    }
+    
+    /* -- PAUSA: TU E IL "CIAO" SIETE AL CENTRO (0.5s - 2.2s) -- */
+    65% {
+        transform: scale(1) translateY(0);
+        height: clamp(180px, 34vh, 320px);
+    }
+    
+    /* -- FASE 2: RESTRINGIMENTO PER FARE SPAZIO AL TESTO (2.2s - 3.5s) -- */
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        height: clamp(90px, 16vh, 120px); /* prima: 120px fisso — reso proporzionale */
+        filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.4));
+    }
+}
+
+/* --- SINCRONIZZAZIONE TESTI --- */
+
+/* Appare subito dopo che l'avatar è saltato fuori (Fase 1) */
+.delay-text-1 { 
+    animation-delay: 0.5s; 
+} 
+
+/* Appare mentre ti stai restringendo, scivolando sotto il titolo (Fase 2) */
+.delay-text-2 { 
+    animation-delay: 2.8s; 
+} 
+
+/* La scritta pulsante che invita al click appare per ultima */
+.delay-text-3 { 
+    animation-delay: 4.0s; 
+}
+
+/* ====================================================== *
+ * Topic Animation                                        *
+ * ====================================================== */
+
 .topic-content {
     position: relative;
     z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: flex-start; /* prima: center — con contenuti lunghi "center" può spingere l'inizio del testo sopra il bordo visibile */
+    min-height: 100dvh; /* prima: height: 100vh — non permetteva al contenuto di eccedere ed essere raggiunto con lo scroll */
     width: 100%;
-    padding: 2rem;
-    box-sizing: border-box; /* Evita che il padding sbordi fuori dallo schermo */
+    padding: calc(2rem + env(safe-area-inset-top)) 1.25rem calc(2.5rem + env(safe-area-inset-bottom)) 1.25rem;
+    box-sizing: border-box;
+    overflow-y: visible;
 }
 
-/* Stile dell'immagine (Tonda tipo foto profilo) */
 .topic-image-wrapper {
-    width: 400px;
-    height: 250px;
-    border-radius: 20%;
+    width: min(280px, 78vw); /* prima: 280px fisso — poteva eccedere su schermi molto stretti (<320px) */
+    height: auto;
+    aspect-ratio: 7 / 6; /* mantiene la proporzione originale 280/240 senza altezza fissa */
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    background-color: white; /* Utile se l'immagine ha lo sfondo trasparente */
+    box-shadow: 0 20px 45px rgba(42, 36, 29, 0.18);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-line);
 }
 
 .topic-image {
@@ -192,48 +307,66 @@ body {
     object-fit: cover;
 }
 
-/* Stile dei testi */
 .topic-text-wrapper {
-    margin-top: 4rem;
+    margin-top: clamp(2rem, 6vh, 3.5rem); /* prima: 3.5rem fisso — ridotto su schermi bassi */
     text-align: center;
     max-width: 500px;
-    width: 100%; /* Si adatta perfettamente al mobile */
+    width: 100%;
 }
 
 .topic-title {
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #1e293b;
-    margin-bottom: 3rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 6vw, 2rem); /* prima: 2rem fisso — si adatta a schermi molto stretti */
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
+    margin-bottom: clamp(1.5rem, 4vh, 2.5rem);
+    position: relative;
+    padding-bottom: 1.25rem;
+}
+
+/* quiet rule beneath the title instead of raw whitespace */
+.topic-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--color-gold);
+    opacity: 0.6;
 }
 
 .topic-section h3 {
-    font-size: 0.9rem;
-    color: #005822;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-gold);
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.6rem;
 }
 
 .topic-section p {
-    font-size: 1.1rem;
-    color: #475569;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--color-muted);
+    line-height: 1.7;
     margin-bottom: 1.5rem;
 }
 
 .topic-dedication {
+    font-family: var(--font-display);
     font-style: italic;
-    font-weight: 600;
-    color: #1e293b !important;
+    font-weight: 500;
+    color: var(--color-ink) !important;
 }
 
-/* --- ANIMAZIONI SPECIFICHE TOPIC --- */
+/* --- Topic-specific animations --- */
 
-/* 1. L'immagine parte grande in mezzo allo schermo e sale */
 @keyframes slideUpImage {
     0% {
-        transform: translateY(120px) scale(2);
+        transform: translateY(100px) scale(1.6);
     }
     100% {
         transform: translateY(0) scale(1);
@@ -241,14 +374,13 @@ body {
 }
 
 .animate-slide-up {
-    animation: slideUpImage 3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation: slideUpImage 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* 2. Il testo appare dal basso verso l'alto in ritardo */
 @keyframes fadeInTextTopic {
     0% {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(28px);
     }
     100% {
         opacity: 1;
@@ -258,6 +390,27 @@ body {
 
 .animate-fade-in-delayed {
     opacity: 0;
-    /* L'animazione dura 0.8s, ma ha un ritardo di 0.7s (quando l'immagine è quasi arrivata in cima) */
-    animation: fadeInTextTopic 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.7s forwards;
+    animation: fadeInTextTopic 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+/* ====================================================== *
+ * Adattamenti extra per schermi molto piccoli/bassi       *
+ * ====================================================== */
+
+@media (max-height: 650px) {
+    .aurora-container {
+        padding-top: 5vh;
+    }
+    .avatar-wrapper {
+        height: clamp(140px, 28vh, 260px);
+    }
+}
+
+@media (max-width: 360px) {
+    .welcome-title {
+        font-size: 2.3rem;
+    }
+    .topic-title {
+        font-size: 1.4rem;
+    }
 }

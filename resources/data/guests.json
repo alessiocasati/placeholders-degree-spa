@@ -2,21 +2,31 @@
     "guests": {
         "adele": {
             "name": "Adele",
-            "concept": "concept",
-            "explanation": "explanation",
-            "dedication": "dedication"
+            "concept": "Firewall",
+            "image": "./resources/img/topics/firewall.jfif",
+            "explanation": "È un muro protettivo, un vero e proprio \"cane da guardia\" digitale che ringhia e blocca chiunque cerchi di entrare in un sistema senza permesso. L'unico modo per passare è chiedere l'autorizzazione all'amministratore capo.",
+            "dedication": "Un po' come quando da piccolo giocavo a pallone in giardino e mi finiva sempre nel vostro cortile. Tu eri l'amministratore capo: ti chiamavo per riprenderla, perché avevo paura del Firewall Breck!"
+        },
+        "anita": {
+            "name": "Anita",
+            "concept": "Zona di Saturazione",
+            "image": "./resources/img/topics/saturation-zone-transistor.jfif",
+            "explanation": "In elettronica, è lo stato in cui un componente smette di opporre resistenza. Si \"rilassa\" completamente, comportandosi come una porta aperta che lascia scorrere l'energia in modo libero e fluido, al massimo della sua capacità.",
+            "dedication": "Ho pensato a questo concetto immaginando le serate in cui uscite tu e la mamma. Un buon Pelinkovac in compagnia è l'equivalente della nostra zona di saturazione: il momento ideale per staccare la spina, abbandonare le \"resistenze\" della giornata e lasciar scorrere liberamente le chiacchiere e il buonumore."
         },
         "brunella": {
             "name": "Bruny",
-            "concept": "concept",
-            "explanation": "explanation",
-            "dedication": "dedication"
+            "concept": "Worst Case Scenario",
+            "image": "./resources/img/topics/worst-case-scenario.jpg",
+            "explanation": "Quando progettiamo un programma, gli ingegneri calcolano sempre il \"caso pessimo\", ovvero ipotizzano la situazione più catastrofica e disastrosa possibile. Ci si prepara al peggio assoluto per essere sicuri che, nella realtà, le cose andranno sempre molto meglio del previsto.",
+            "dedication": "È la spiegazione scientifica al perché dopo ogni esame ti chiamo disperato dicendo \"è andata malissimo\", e poi prendo 30! Io faccio semplicemente l'analisi del caso pessimo, e tu, con pazienza infinita, ascolti i miei drammi preventivi prendendomi in giro, perché sai già benissimo come andrà a finire."
         },
         "cugina-chiara": {
             "name": "Chiara",
-            "concept": "concept",
-            "explanation": "explanation",
-            "dedication": "dedication"
+            "concept": "Le Chaton Fat",
+            "image": "./resources/img/topics/le-chaton-fat.png",
+            "explanation": "È una divertente leggenda metropolitana nel mondo dell'Intelligenza Artificiale. Qualcuno su internet si è inventato per scherzo l'esistenza di questo finto e potentissimo modello francese chiamato, appunto, \"Le Chaton Fat\" (Il Gattino Grasso), facendolo diventare un meme.",
+            "dedication": "Ho pensato subito alle risate che ci facevamo con la Cipi. Molto prima che agli esperti di computer venisse in mente di inventare un gatto grasso virtuale, noi avevamo già il nostro inimitabile originale in casa!"
         },
         "cugina-jessica": {
             "name": "Jessy",
@@ -26,76 +36,94 @@
         },
         "cugina-susanna": {
             "name": "Susi",
-            "concept": "concept",
-            "explanation": "explanation",
-            "dedication": "dedication"
+            "concept": "Algoritmo Ricorsivo",
+            "image": "./resources/img/topics/recursive-algorithm.png",
+            "explanation": "È una tecnica molto elegante in cui un'istruzione, per funzionare, chiama se stessa. È un po' come mettersi in mezzo a due specchi e vedere la propria immagine ripetersi all'infinito.",
+            "dedication": "L'ho scelta ripensando a noi che cantavamo \"pace sia, pace a voi...\". Una strofa sembrava chiamare per magia quella successiva, in un circolo senza fine. Senza saperlo, eravamo già dei piccoli esperti di ricorsione!"
         },
         "cugina-valentina": {
             "name": "Vale",
-            "concept": "concept",
-            "explanation": "explanation",
-            "dedication": "dedication"
+            "concept": "Adattamento di Impedenza",
+            "image": "./resources/img/topics/impedance-matching.jpg",
+            "explanation": "In un circuito elettrico, è la condizione magica e perfetta che si crea quando colleghi due componenti alla perfezione. Grazie a questo incastro ideale, l'energia fluisce da uno all'altro al 100%, senza alcuna resistenza o dispersione.",
+            "dedication": "Ho scelto questo concetto ingegneristico per descrivere la sintonia delle nostre chiacchierate. Tra noi c'è un adattamento perfetto: c'è sempre totale comprensione, le parole fluiscono senza incontrare \"resistenze\" e tutta la tua infinita dolcezza arriva dritta a destinazione senza mai andare sprecata."
         },
         "dario": {
             "name": "Dario",
-            "concept": "concept",
-            "explanation": "explanation",
-            "dedication": "dedication"
+            "concept": "Asintoto",
+            "image": "./resources/img/topics/asymptote.webp",
+            "explanation": "È una linea dritta a cui una curva si avvicina sempre di più, all'infinito, ma per quanto ci provi non riuscirà a toccarla o superarla mai.",
+            "dedication": "Rappresenta perfettamente le tue prestazioni sui kart. Puoi impegnarti al massimo, accelerare e avvicinarti sempre di più al mio tempo giro dopo giro... ma la verità è che non lo raggiungerai mai!"
         },
         "mamma": {
             "name": "Mamma",
-            "concept": "concept",
-            "explanation": "explanation",
-            "dedication": "dedication"
+            "concept": "Scheda Madre",
+            "image": "./resources/img/topics/motherboard.jpg",
+            "explanation": "È il cuore pulsante e silenzioso di ogni sistema. È una grandissima base sicura che accoglie e abbraccia tutti i componenti del computer, li fa parlare tra loro e fornisce l'energia necessaria a farli funzionare al meglio.",
+            "dedication": "Il nome informatico dice già tutto! In questi tre anni di ingegneria sei stata esattamente questo per me: il centro che ha tenuto insieme tutto. Mi hai dato l'energia, il supporto e la cura per superare ogni esame e crescere, anche nei momenti di maggiore fatica."
+        },
+        "massimo": {
+            "name": "Massimo",
+            "concept": "Controllo in Retroazione",
+            "image": "./resources/img/topics/feedback-control.webp",
+            "explanation": "È un sistema geniale che permette a una macchina di correggersi da sola. Il sistema osserva costantemente cosa sta succedendo, capisce se c'è un piccolo errore e \"aggiusta il tiro\" in tempo reale per mantenere la rotta perfetta, senza bisogno di aiuti esterni.",
+            "dedication": "Ho associato questo concetto alla tua passione per le automobili. È la magia invisibile alla base della grande ingegneria dei motori, quella che fa funzionare sistemi come l'ABS o il Cruise Control, garantendo che la vettura risponda sempre con la massima precisione ai comandi di chi la guida."
         },
         "nonna": {
             "name": "Nonna",
-            "concept": "concept",
-            "explanation": "explanation",
-            "dedication": "dedication"
+            "concept": "Bug",
+            "image": "./resources/img/topics/bug.jpg",
+            "explanation": "È un piccolo capriccio del sistema, il cui nome in origine indicava letteralmente un \"insetto\" (o una piccola bestia!), che si nasconde nei programmi e li fa comportare in modo dispettoso e imprevisto.",
+            "dedication": "Il richiamo al tuo \"bestiulina\" era troppo forte per non approfittarne! Fin da piccolo sono stato il tuo bug personale."
         },
         "papa": {
             "name": "Papà",
             "concept": "Macchina di Turing",
-            "image": "./resources/img/turing-machine.png",
-            "explanation": "explanation",
-            "dedication": "dedication"
+            "image": "./resources/img/topics/turing-machine.png",
+            "explanation": "È l'invenzione geniale da cui è nata l'informatica. Un modello astratto e apparentemente semplice che, usando solo poche regole di base e un nastro infinito, è matematicamente in grado di risolvere qualsiasi problema logico esistente. Insomma, il vero \"papà\" di tutti i computer!",
+            "dedication": "L'ho scelta perché tu sei la base solida di tutto il mio percorso. Proprio come questa macchina, non importa quanto sia grande o complicato il problema che mi trovo davanti: con la tua (poca) pazienza e le tue \"regole\" di vita infallibili, ci sei sempre tu a sostenermi per affrontarlo al meglio"
         },
         "valter": {
             "name": "Valter",
-            "concept": "concept",
-            "explanation": "explanation",
-            "dedication": "dedication"
+            "concept": "Bias Algoritmico",
+            "image": "./resources/img/topics/algorithmic-bias.jpg",
+            "explanation": "Nell'Intelligenza Artificiale, un \"bias\" è un vero e proprio pregiudizio. Succede quando un programma impara una regola ingiusta, favorendo sempre in modo spudorato una situazione e penalizzandone un'altra.",
+            "dedication": "È evidente che il meteo abbia un fortissimo bias nei tuoi confronti! Nei miei studi sui sistemi intelligenti raramente ho visto un favoritismo così netto: per le tue grigliate il sole è sempre assicurato, mentre papà è sistematicamente condannato alla pioggia. Sei decisamente il preferito dell'algoritmo!"
         },
         "zia-daniela": {
             "name": "Zia Dany",
-            "concept": "concept",
-            "explanation": "explanation",
-            "dedication": "dedication"
+            "concept": "Depth-First Search",
+            "image": "./resources/img/topics/dfs.gif",
+            "explanation": "È un metodo usato dai computer per esplorare le soluzioni di un problema. Invece di guardarsi intorno restando in superficie, il programma si \"tuffa\" esplorando una strada dritta fino in fondo prima di tornare a galla.",
+            "dedication": "Ho pensato subito a quando mi hai insegnato a tuffarmi di testa. Mi hai dato il coraggio di non restare a galla e di buttarmi a capofitto verso il fondo, senza avere paura dell'acqua, esattamente come fa questo algoritmo!"
         },
         "zia-elena": {
             "name": "Zia Elena",
-            "concept": "concept",
-            "explanation": "explanation",
-            "dedication": "dedication"
+            "concept": "Bubble Sort",
+            "image": "./resources/img/topics/bubble-sort.jfif",
+            "explanation": "Un metodo per mettere in ordine le cose scambiandole a due a due finché non sono tutte nella posizione giusta, proprio come le bolle che salgono a galla.",
+            "dedication": "Mi ricorda i nostri pomeriggi passati a mettere pazientemente in fila le mie macchinine. Se lo avessimo saputo usare, con il bubble sort avremmo avuto tanto tempo libero in più nei nostri pomeriggi!"
         },
         "zia-rajka": {
             "name": "Zia Rajka",
-            "concept": "concept",
-            "explanation": "explanation",
-            "dedication": "dedication"
+            "concept": "Istruzione di Import",
+            "image": "./resources/img/topics/import-instruction.png",
+            "explanation": "È un comando speciale che i programmatori usano per procurarsi qualcosa di cui hanno molto bisogno. Serve a ordinare al sistema di andare a prendere una risorsa preziosa in un posto esterno, e farla arrivare dritta nel programma. L'ho usata anche per questo sito!",
+            "dedication": "Ho scelto questo concetto perché ogni estate esegui questo comando alla perfezione! Quando partiamo per le vacanze, la tua istruzione \"Import\" è sempre chiarissima: importare direttamente dalla \"libreria esterna\" della Croazia il tuo immancabile carico di fichi!"
         },
         "zio-alberto": {
             "name": "Zio Alberto",
-            "concept": "concept",
-            "explanation": "explanation",
-            "dedication": "dedication"
+            "concept": "Allucinazione dell'AI",
+            "image": "./resources/img/topics/ai-hallucination.webp",
+            "explanation": "Succede quando un sistema intelligente non conosce la risposta esatta ma, pur di non fare scena muta, si inventa un'informazione del tutto falsa proponendola con un'assoluta e convincente sicurezza.",
+            "dedication": "L'ho scelta pensando a quella partita a nomi, cose e città. Il tuo cervello ha fatto esattamente come l'Intelligenza Artificiale: pur di non lasciare la casella vuota con la lettera F, ha allucinato con totale sicurezza l'esistenza della celebre band dei \"Fanfurla\"!"
         },
         "zio-pata": {
             "name": "Zio Pata",
-            "concept": "concept",
-            "explanation": "explanation",
-            "dedication": "dedication"
+            "concept": "Aliasing",
+            "image": "./resources/img/topics/aliasing.png",
+            "explanation": "È quello che succede quando in un programma diamo due nomi diversi alla stessa identica cosa. Il computer non fa una piega: sa benissimo che, a prescindere dal nome che usi, ti stai rivolgendo sempre e solo a quell'oggetto.",
+            "dedication": "L'ho scelto perché l'aliasing è la versione informatica e ingegneristica dei soprannomi! Fin da piccolo, per te io non avevo solo il mio nome, ma ero il tuo \"Crapa de Sgabel\" ufficiale. Due nomi diversi, ma per indicare sempre lo stesso nipote e lo stesso affetto."
         }
     }
 }

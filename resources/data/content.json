@@ -2,7 +2,8 @@
     "welcome": {
         "title": "Ciao",
         "subtitle": "Non potevo fare un segnaposto normale.\nPer questo, ho deciso di associarti ad un argomento che ha segnato i miei studi!",
-        "cta": "Tocca lo schermo per scoprire il tuo argomento"
+        "cta": "Tocca lo schermo per scoprire il tuo argomento",
+        "avatar": "./resources/img/avatar/alessio-avatar.png"
     },
     "topic": {
         "description": "Che cos'è?",
