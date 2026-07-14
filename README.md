@@ -77,10 +77,10 @@ This project was built with a strict **zero-dependency** approach to demonstrate
 │   │   └── light-style.css # Light theme styling, resets and animations
 │   └── img/
 │       ├── avatar/         # Avatar and profile assets
+│       ├── logo/           # Laurel logo for qr code decoration
 │       └── topics/         # Topic-specific visual assets
 ├── utils/
-│   ├── qr_generator.py     # Python automation script for batch QR code generation
-│   └── requirements.txt    # Python dependencies for the QR script
+│   └── qr_generator.py     # Python automation script for batch QR code generation
 ├── .env.example            # Example environment variables template
 ├── .gitignore              # Git ignore file (excludes venv and generated QR codes)
 └── LICENSE                 # MIT License
