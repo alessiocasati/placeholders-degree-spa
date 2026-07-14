@@ -34,11 +34,10 @@ It was also a chance to prove to myself that I could deliver a polished, app-lik
 
 ## 📸 Preview
 
-> _Add a screenshot or short GIF here showing the intro animation and the personalized content reveal — this is the single highest-impact addition for anyone browsing your repo without clicking the live demo._
-
-```text
-./resources/img/preview/demo.gif
-```
+<p align="center">
+  <img src="./resources/img/preview/demo-welcome.jfif" alt="Demo Welcome" width="200" style="filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.3));">
+  <img src="./resources/img/preview/demo-topic.jfif" alt="Demo Welcome" width="200" style="filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.3));">
+</p>
 
 ---
 
@@ -82,9 +81,9 @@ This project was built with a strict **zero-dependency** approach to demonstrate
 ├── utils/
 │   ├── qr_generator.py     # Python automation script for batch QR code generation
 │   └── requirements.txt    # Python dependencies for the QR script
-├── .env.example             # Example environment variables template
-├── .gitignore                # Git ignore file (excludes venv and generated QR codes)
-└── LICENSE                   # MIT License
+├── .env.example            # Example environment variables template
+├── .gitignore              # Git ignore file (excludes venv and generated QR codes)
+└── LICENSE                 # MIT License
 ```
 
 ---
@@ -133,12 +132,12 @@ To facilitate the creation of physical placeholders for the tables, the project 
 
 3. **Install Dependencies:**
    ```bash
-   pip install -r utils/requirements.txt
+   pip install qrcode python-dotenv Pillow
    ```
 
 4. **Run the Script:**
    ```bash
-   python3 utils/generate_qr.py
+   python3 utils/qr_generator.py
    ```
 
 Upon successful execution, the script will create a `resources/img/qrcodes/` directory containing all the generated `.png` files, ready for typography printing.
@@ -190,6 +189,5 @@ This project is open-source and available under the **MIT License**.
 ## 👤 Author
 
 **Alessio Casati**
-[LinkedIn](#) · [Portfolio](#) · [GitHub](#)
 
 _Feel free to reach out if you have questions about the project or want to collaborate!_
