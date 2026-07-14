@@ -1,5 +1,10 @@
 # 🎓 Graduation Day - Dynamic Personalized Placeholders
 
+![License](https://img.shields.io/badge/license-MIT-green)
+![No Dependencies](https://img.shields.io/badge/dependencies-zero-blue)
+![Made with](https://img.shields.io/badge/made%20with-HTML5%20%7C%20CSS3%20%7C%20JS%20%7C%20Python-orange)
+![Status](https://img.shields.io/badge/status-completed-brightgreen)
+
 A lightweight, mobile-first Single Page Application (SPA) designed to welcome graduation guests with personalized dynamic content. Built entirely in **Vanilla JS (ES6+)** and **pure CSS3**, this project showcases how to deliver an engaging, app-like user experience without the overhead of heavy modern frameworks.
 
 <p align="center">
@@ -8,7 +13,37 @@ A lightweight, mobile-first Single Page Application (SPA) designed to welcome gr
 
 ---
 
+## 💡 Why I Built This
+
+For my graduation party, I wanted table placeholders that felt personal rather than printed name cards. Each guest scans a QR code and lands on a page built just for them: a personalized greeting, followed by a short explanation of a topic tailored to how well they know the subject.
+
+It was also a chance to prove to myself that I could deliver a polished, app-like mobile experience using **only core web technologies** — no framework, no build step, no dependencies — while still following solid software engineering practices (separation of concerns, componentized rendering, clean routing).
+
+---
+
+## ✨ Features
+
+- 🔗 **Personalized deep links** — each guest gets a unique URL that renders their own greeting and content
+- 🎨 **Light & dark theme support** with CSS variables for easy customization
+- ⚡ **Hash-based SPA routing** — instant transitions, no full page reloads
+- 🎬 **Two-phase hardware-accelerated animations** (elastic intro → content reveal)
+- 🖨️ **Batch QR code generation** via a Python automation script, ready for print
+- 📱 **Mobile-first**, zero-dependency front end
+
+---
+
+## 📸 Preview
+
+> _Add a screenshot or short GIF here showing the intro animation and the personalized content reveal — this is the single highest-impact addition for anyone browsing your repo without clicking the live demo._
+
+```text
+./resources/img/preview/demo.gif
+```
+
+---
+
 ## 🚀 Live Demo
+
 The application is deployed and accessible on mobile devices via GitHub Pages.
 👉 **[Link to Live Demo](https://alessiocasati.github.io/placeholders-degree-spa/)**
 
@@ -22,30 +57,6 @@ This project was built with a strict **zero-dependency** approach to demonstrate
 * **Vanilla JavaScript (ES6+):** Dynamic DOM manipulation, template literals for modular component rendering, and custom state management.
 * **Python 3:** Automation scripting for batch generation of print-ready QR codes.
 * **No Frameworks:** No React, Vue, or Tailwind. Just clean, raw, and performant web technologies.
-
----
-
-## 📐 Software Architecture & Design Patterns
-
-The codebase is structured around key software engineering principles to ensure maintainability, scalability, and clean execution:
-
-### 1. Separation of Concerns (SoC)
-* **JavaScript** is strictly responsible for **logic and data orchestration**. HTML templates are injected dynamically based on the guest's unique identifier.
-* **CSS** is strictly responsible for **presentation, responsiveness, and timing**. No inline styles are injected via JS; instead, UI states are triggered by toggling CSS classes.
-
-### 2. Hash-Based Client-Side Routing
-To deliver a true Single Page Application (SPA) experience on mobile, the app utilizes native window hash monitoring:
-
-```javascript
-window.addEventListener('hashchange', router);
-```
-
-This allows deep-linking and personalized routing without triggering full page reloads, ensuring instant transitions.
-
-### 3. Hardware-Accelerated 2-Phase CSS Animations
-To optimize performance on low-end mobile devices, animations rely exclusively on `transform` and `opacity` properties, which run directly on the GPU:
-* **Phase 1 (Intro):** An elastic, spring-like scale entrance that puts the avatar and a personalized greeting at the center of the screen.
-* **Phase 2 (Collapse & Content Reveal):** A smooth height adjustment that seamlessly scales down the avatar to make room for the main graduation topic explanation, maintaining vertical rhythm without scroll overflow.
 
 ---
 
@@ -69,10 +80,11 @@ To optimize performance on low-end mobile devices, animations rely exclusively o
 │       ├── avatar/         # Avatar and profile assets
 │       └── topics/         # Topic-specific visual assets
 ├── utils/
-│   └── qr_generator.py     # Python automation script for batch QR code generation
-├── .env.example            # Example environment variables template
-├── .gitignore              # Git ignore file (excludes venv and generated QR codes)
-└── LICENSE                 # MIT License
+│   ├── qr_generator.py     # Python automation script for batch QR code generation
+│   └── requirements.txt    # Python dependencies for the QR script
+├── .env.example             # Example environment variables template
+├── .gitignore                # Git ignore file (excludes venv and generated QR codes)
+└── LICENSE                   # MIT License
 ```
 
 ---
@@ -83,7 +95,7 @@ To run this project locally, you don't need `npm` or any build tools. Simply clo
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+   git clone https://github.com/your-username/your-repo-name.git
    ```
 2. Enter the directory:
    ```bash
@@ -121,7 +133,7 @@ To facilitate the creation of physical placeholders for the tables, the project 
 
 3. **Install Dependencies:**
    ```bash
-   pip install qrcode python-dotenv
+   pip install -r utils/requirements.txt
    ```
 
 4. **Run the Script:**
@@ -131,7 +143,53 @@ To facilitate the creation of physical placeholders for the tables, the project 
 
 Upon successful execution, the script will create a `resources/img/qrcodes/` directory containing all the generated `.png` files, ready for typography printing.
 
+**Requirements:** Python 3.9+
+
+---
+
+## 📐 Software Architecture & Design Patterns
+
+The codebase is structured around key software engineering principles to ensure maintainability, scalability, and clean execution:
+
+### 1. Separation of Concerns (SoC)
+* **JavaScript** is strictly responsible for **logic and data orchestration**. HTML templates are injected dynamically based on the guest's unique identifier.
+* **CSS** is strictly responsible for **presentation, responsiveness, and timing**. No inline styles are injected via JS; instead, UI states are triggered by toggling CSS classes.
+
+### 2. Hash-Based Client-Side Routing
+To deliver a true Single Page Application (SPA) experience on mobile, the app utilizes native window hash monitoring:
+
+```javascript
+window.addEventListener('hashchange', router);
+```
+
+This allows deep-linking and personalized routing without triggering full page reloads, ensuring instant transitions.
+
+### 3. Hardware-Accelerated 2-Phase CSS Animations
+To optimize performance on low-end mobile devices, animations rely exclusively on `transform` and `opacity` properties, which run directly on the GPU:
+* **Phase 1 (Intro):** An elastic, spring-like scale entrance that puts the avatar and a personalized greeting at the center of the screen.
+* **Phase 2 (Collapse & Content Reveal):** A smooth height adjustment that seamlessly scales down the avatar to make room for the main graduation topic explanation, maintaining vertical rhythm without scroll overflow.
+
+---
+
+## 🔭 Lessons Learned & Possible Improvements
+
+Building this without a framework was a deliberate constraint to sharpen my understanding of core browser APIs. Looking back, a few things I'd explore next:
+
+- Add a small suite of unit tests for the routing and data-loading logic
+- Evaluate TypeScript for stronger type safety in the state management layer
+- Extract the QR generation script into a small CLI with configurable output formats (SVG in addition to PNG)
+- Add automated accessibility checks (contrast, focus order) for the light/dark themes
+
 ---
 
 ## 📄 License
 This project is open-source and available under the **MIT License**.
+
+---
+
+## 👤 Author
+
+**Alessio Casati**
+[LinkedIn](#) · [Portfolio](#) · [GitHub](#)
+
+_Feel free to reach out if you have questions about the project or want to collaborate!_
