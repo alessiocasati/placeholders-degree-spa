@@ -3,14 +3,14 @@
 A lightweight, mobile-first Single Page Application (SPA) designed to welcome graduation guests with personalized dynamic content. Built entirely in **Vanilla JS (ES6+)** and **pure CSS3**, this project showcases how to deliver an engaging, app-like user experience without the overhead of heavy modern frameworks.
 
 <p align="center">
-  <img src="./resources/img/avatar/alessio-avatar.png" alt="Alessio - Caricature" width="220" style="filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.3));">
+  <img src="./resources/img/avatar/alessio-avatar.png" alt="Alessio - Caricature" width="100" style="filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.3));">
 </p>
 
 ---
 
 ## 🚀 Live Demo
 The application is deployed and accessible on mobile devices via GitHub Pages.
-👉 **[Link to Live Demo](https://your-github-username.github.io/your-repo-name/)** *(Replace with your actual GitHub Pages link)*
+👉 **[Link to Live Demo](https://alessiocasati.github.io/placeholders-degree-spa/)**
 
 ---
 
@@ -20,6 +20,7 @@ This project was built with a strict **zero-dependency** approach to demonstrate
 
 * **HTML5 & CSS3:** Responsive layouts using Flexbox, CSS Variables for easy theming, and optimized hardware-accelerated animations.
 * **Vanilla JavaScript (ES6+):** Dynamic DOM manipulation, template literals for modular component rendering, and custom state management.
+* **Python 3:** Automation scripting for batch generation of print-ready QR codes.
 * **No Frameworks:** No React, Vue, or Tailwind. Just clean, raw, and performant web technologies.
 
 ---
@@ -35,7 +36,9 @@ The codebase is structured around key software engineering principles to ensure 
 ### 2. Hash-Based Client-Side Routing
 To deliver a true Single Page Application (SPA) experience on mobile, the app utilizes native window hash monitoring:
 
-`window.addEventListener('hashchange', router);`
+```javascript
+window.addEventListener('hashchange', router);
+```
 
 This allows deep-linking and personalized routing without triggering full page reloads, ensuring instant transitions.
 
@@ -48,23 +51,29 @@ To optimize performance on low-end mobile devices, animations rely exclusively o
 
 ## 📦 Project Structure
 
-    ├── index.html              # Main entry point (minimal layout)
-    ├── src/
-    │   ├── home.js             # Core app logic & Hash-based SPA routing controller
-    │   └── pages/
-    │       ├── welcome.js      # Dynamic welcome stage component
-    │       └── topic.js        # Topic explanation component
-    ├── resources/
-    │   ├── data/
-    │   │   ├── content.json    # Centralized text content for UI (i18n ready)
-    │   │   └── guests.json     # Centralized database of guests and topic associations
-    │   ├── css/
-    │   │   ├── dark-style.css  # Dark theme styling, resets and animations
-    │   │   └── light-style.css # Light theme styling, resets and animations
-    │   └── img/
-    │       ├── avatar/         # Avatar and profile assets
-    │       └── topics/         # Topic-specific visual assets
-    └── LICENSE                 # MIT License
+```text
+├── index.html              # Main entry point (minimal layout)
+├── src/
+│   ├── home.js             # Core app logic & Hash-based SPA routing controller
+│   └── pages/
+│       ├── welcome.js      # Dynamic welcome stage component
+│       └── topic.js        # Topic explanation component
+├── resources/
+│   ├── data/
+│   │   ├── content.json    # Centralized text content for UI (i18n ready)
+│   │   └── guests.json     # Centralized database of guests and topic associations
+│   ├── css/
+│   │   ├── dark-style.css  # Dark theme styling, resets and animations
+│   │   └── light-style.css # Light theme styling, resets and animations
+│   └── img/
+│       ├── avatar/         # Avatar and profile assets
+│       └── topics/         # Topic-specific visual assets
+├── utils/
+│   └── qr_generator.py     # Python automation script for batch QR code generation
+├── .env.example            # Example environment variables template
+├── .gitignore              # Git ignore file (excludes venv and generated QR codes)
+└── LICENSE                 # MIT License
+```
 
 ---
 
@@ -73,13 +82,54 @@ To optimize performance on low-end mobile devices, animations rely exclusively o
 To run this project locally, you don't need `npm` or any build tools. Simply clone the repository and spin up a local development server.
 
 1. Clone the repository:
-   `git clone https://github.com/your-username/your-repo-name.git`
+   ```bash
+   git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+   ```
 2. Enter the directory:
-   `cd your-repo-name`
+   ```bash
+   cd your-repo-name
+   ```
 3. Start a lightweight Python local server:
-   `python3 -m http.server 8000`
+   ```bash
+   python3 -m http.server 8000
+   ```
 4. Open your browser and navigate to:
-   `http://localhost:8000/#<guest-id>`
+   ```text
+   http://localhost:8000/#<guest-id>
+   ```
+
+---
+
+## 🖨️ QR Code Automation
+
+To facilitate the creation of physical placeholders for the tables, the project includes a Python automation script inside the `utils/` folder. It reads the `guests.json` database and batch-generates high-resolution, print-ready QR codes for each guest.
+
+### Setup & Execution
+
+1. **Configure Environment Variables:**
+   Copy the example environment file to create your local configuration:
+   ```bash
+   cp .env.example .env.local
+   ```
+   Edit `.env.local` and set your `BASE_URL` (e.g., your GitHub Pages URL). Ensure it ends with a trailing slash (`/`).
+
+2. **Create a Virtual Environment (Recommended):**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install Dependencies:**
+   ```bash
+   pip install qrcode python-dotenv
+   ```
+
+4. **Run the Script:**
+   ```bash
+   python3 utils/generate_qr.py
+   ```
+
+Upon successful execution, the script will create a `resources/img/qrcodes/` directory containing all the generated `.png` files, ready for typography printing.
 
 ---
 

@@ -2,7 +2,7 @@
 venv/
 
 # Cartella di output dei QR generati (opzionale, ma consigliata)
-qr_codes_stampa/
+resources/img/qrcodes/
 
 # Environment variables
 .env.local

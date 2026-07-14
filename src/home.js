@@ -5,7 +5,7 @@ const appDiv = document.getElementById('app');
 let clickHandler = null; // 1. Variabile dichiarata correttamente nel modulo
 
 async function loadApp() {
-    const hash = window.location.hash.substring(1);
+    let hash = window.location.hash.substring(1);
 
     // Pulizia di vecchi listener
     if (clickHandler) {
@@ -14,8 +14,7 @@ async function loadApp() {
     }
     
     if (!hash) {
-        appDiv.innerHTML = "<h1>In attesa di scansione...</h1>";
-        return;
+        hash = 'user'; // default guest if no hash is provided
     }
 
     try {

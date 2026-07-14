@@ -139,6 +139,13 @@
             "image": "./resources/img/topics/aliasing.png",
             "explanation": "È quello che succede quando in un programma diamo due nomi diversi alla stessa identica cosa. Il computer non fa una piega: sa benissimo che, a prescindere dal nome che usi, ti stai rivolgendo sempre e solo a quell'oggetto.",
             "dedication": "L'ho scelto perché l'aliasing è la versione informatica e ingegneristica dei soprannomi! Fin da piccolo, per te io non avevo solo il mio nome, ma ero il tuo \"Crapa de Sgabel\" ufficiale. Due nomi diversi, ma per indicare sempre lo stesso nipote e lo stesso affetto."
+        },
+        "user": {
+            "name": "User",
+            "concept": "User Experience",
+            "image": "./resources/img/topics/user-experience.webp",
+            "explanation": "È l'esperienza che una persona vive quando interagisce con un prodotto o un servizio. In informatica, si riferisce a quanto sia facile, piacevole e intuitivo usare un software o un'applicazione.",
+            "dedication": "Ho scelto questo concetto perché rappresenta perfettamente il tuo ruolo in questo istante. Sentiti libero di lasciare un feedback o di utilizzare questo codice per un'occasione speciale."
         }
     }
 }
