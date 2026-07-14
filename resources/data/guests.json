@@ -30,9 +30,10 @@
         },
         "cugina-jessica": {
             "name": "Jessy",
-            "concept": "concept",
-            "explanation": "explanation",
-            "dedication": "dedication"
+            "concept": "Fast Boot",
+            "image": "./resources/img/topics/fast-boot.webp",
+            "explanation": "È un trucco dei dispositivi moderni per accendersi in un lampo. Invece di fare tutta la noiosa e lenta trafila del risveglio sbadigliando, il sistema salta i passaggi inutili ed è subito attivo e scattante in un secondo.",
+            "dedication": "Tu sei ufficialmente il \"Fast Boot\" della famiglia! Mentre alcuni ci mettono ore a carburare cercando di uscire dalle coperte (io in primis), tu ti accendi all'istante la mattina presto, con la voglia di tuffarti subito nelle cose belle senza sprecare tempo a poltrire."
         },
         "cugina-silvia": {
             "name": "Sissi",

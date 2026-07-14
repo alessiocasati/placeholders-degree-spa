@@ -1,0 +1,8 @@
+# Ambienti virtuali Python
+venv/
+
+# Cartella di output dei QR generati (opzionale, ma consigliata)
+qr_codes_stampa/
+
+# Environment variables
+.env.local
