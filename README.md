@@ -1,0 +1,87 @@
+# 🎓 Graduation Day - Dynamic Personalized Placeholders
+
+A lightweight, mobile-first Single Page Application (SPA) designed to welcome graduation guests with personalized dynamic content. Built entirely in **Vanilla JS (ES6+)** and **pure CSS3**, this project showcases how to deliver an engaging, app-like user experience without the overhead of heavy modern frameworks.
+
+<p align="center">
+  <img src="./resources/img/avatar/alessio-avatar.png" alt="Alessio - Caricature" width="220" style="filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.3));">
+</p>
+
+---
+
+## 🚀 Live Demo
+The application is deployed and accessible on mobile devices via GitHub Pages.
+👉 **[Link to Live Demo](https://your-github-username.github.io/your-repo-name/)** *(Replace with your actual GitHub Pages link)*
+
+---
+
+## 🛠️ Tech Stack & Philosophy
+
+This project was built with a strict **zero-dependency** approach to demonstrate mastery over core Web APIs and browser performance optimization:
+
+* **HTML5 & CSS3:** Responsive layouts using Flexbox, CSS Variables for easy theming, and optimized hardware-accelerated animations.
+* **Vanilla JavaScript (ES6+):** Dynamic DOM manipulation, template literals for modular component rendering, and custom state management.
+* **No Frameworks:** No React, Vue, or Tailwind. Just clean, raw, and performant web technologies.
+
+---
+
+## 📐 Software Architecture & Design Patterns
+
+The codebase is structured around key software engineering principles to ensure maintainability, scalability, and clean execution:
+
+### 1. Separation of Concerns (SoC)
+* **JavaScript** is strictly responsible for **logic and data orchestration**. HTML templates are injected dynamically based on the guest's unique identifier.
+* **CSS** is strictly responsible for **presentation, responsiveness, and timing**. No inline styles are injected via JS; instead, UI states are triggered by toggling CSS classes.
+
+### 2. Hash-Based Client-Side Routing
+To deliver a true Single Page Application (SPA) experience on mobile, the app utilizes native window hash monitoring:
+
+`window.addEventListener('hashchange', router);`
+
+This allows deep-linking and personalized routing without triggering full page reloads, ensuring instant transitions.
+
+### 3. Hardware-Accelerated 2-Phase CSS Animations
+To optimize performance on low-end mobile devices, animations rely exclusively on `transform` and `opacity` properties, which run directly on the GPU:
+* **Phase 1 (Intro):** An elastic, spring-like scale entrance that puts the avatar and a personalized greeting at the center of the screen.
+* **Phase 2 (Collapse & Content Reveal):** A smooth height adjustment that seamlessly scales down the avatar to make room for the main graduation topic explanation, maintaining vertical rhythm without scroll overflow.
+
+---
+
+## 📦 Project Structure
+
+    ├── index.html              # Main entry point (minimal layout)
+    ├── src/
+    │   ├── home.js             # Core app logic & Hash-based SPA routing controller
+    │   └── pages/
+    │       ├── welcome.js      # Dynamic welcome stage component
+    │       └── topic.js        # Topic explanation component
+    ├── resources/
+    │   ├── data/
+    │   │   ├── content.json    # Centralized text content for UI (i18n ready)
+    │   │   └── guests.json     # Centralized database of guests and topic associations
+    │   ├── css/
+    │   │   ├── dark-style.css  # Dark theme styling, resets and animations
+    │   │   └── light-style.css # Light theme styling, resets and animations
+    │   └── img/
+    │       ├── avatar/         # Avatar and profile assets
+    │       └── topics/         # Topic-specific visual assets
+    └── LICENSE                 # MIT License
+
+---
+
+## 🔧 Local Setup
+
+To run this project locally, you don't need `npm` or any build tools. Simply clone the repository and spin up a local development server.
+
+1. Clone the repository:
+   `git clone https://github.com/your-username/your-repo-name.git`
+2. Enter the directory:
+   `cd your-repo-name`
+3. Start a lightweight Python local server:
+   `python3 -m http.server 8000`
+4. Open your browser and navigate to:
+   `http://localhost:8000/#<guest-id>`
+
+---
+
+## 📄 License
+This project is open-source and available under the **MIT License**.

@@ -1,5 +1,5 @@
-import { renderWelcome } from './welcome.js';
-import { renderTopic } from './topic.js';
+import { renderWelcome } from './pages/welcome.js';
+import { renderTopic } from './pages/topic.js';
 
 const appDiv = document.getElementById('app');
 let clickHandler = null; // 1. Variabile dichiarata correttamente nel modulo

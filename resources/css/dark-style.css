@@ -1,0 +1,400 @@
+/* CSS Styles — Dark Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===================================================== *
+ * Design tokens                                          *
+ * ====================================================== */
+
+:root {
+    /* palette — deep ink background, warm ivory text, quiet gold/sage/rose accents */
+    --color-bg: #1c1813;
+    --color-ink: #f4ede2;
+    --color-muted: #b8ab99;
+    --color-gold: #d8b578;
+    --color-sage: #b5ad6398;
+    --color-rose: #d9b4ba;
+    --color-line: rgba(244, 237, 226, 0.12);
+
+    --font-display: 'Fraunces', 'Iowan Old Style', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+html {
+    /* Evita che iOS ridimensioni il testo in orizzontale e stabilizza lo scroll */
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    overflow-x: hidden; /* Continua a bloccare movimenti laterali e barre bianche */
+    overflow-y: auto;
+    min-height: 100dvh; /* invece di un'altezza fissa, si adatta e permette scroll naturale */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===================================================== *
+ * Welcome Animation                                      *
+ * ====================================================== */
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 0 rgba(216, 181, 120, 0);
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.92;
+        text-shadow: 0 0 18px rgba(216, 181, 120, 0.45);
+        transform: scale(1.05);
+    }
+}
+
+.welcome-card {
+    background: transparent;
+    box-shadow: none;
+    text-align: center;
+}
+
+.welcome-title {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
+    margin-top: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+.welcome-subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    white-space: pre-line;
+    line-height: 1.6;
+    color: var(--color-muted);
+}
+
+.welcome-cta {
+    margin-top: 4rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.welcome-cta:hover {
+    letter-spacing: 3px;
+    color: var(--color-ink);
+}
+
+.pulse-text {
+    display: inline-block;
+    animation: pulse 3.2s ease-in-out infinite;
+}
+
+/* Soft ambient drift, in place of the old high-contrast blobs */
+@keyframes aurora-1 {
+    0%   { transform: translate(0%, 0%) scale(1); }
+    50%  { transform: translate(-8%, 10%) scale(1.15); }
+    100% { transform: translate(0%, 0%) scale(1); }
+}
+
+@keyframes aurora-2 {
+    0%   { transform: translate(0%, 0%) scale(1); }
+    50%  { transform: translate(8%, -10%) scale(1.1); }
+    100% { transform: translate(0%, 0%) scale(1); }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    opacity: 0;
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.8s; }
+.delay-3 { animation-delay: 2.5s; }
+
+.aurora-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* prima: justify-content veniva impostato due volte (center poi flex-start), teniamo solo la seconda */
+    justify-content: flex-start;
+    min-height: 100dvh; /* prima: height: 100vh — fisso e tagliava il contenuto su mobile */
+    width: 100%; /* prima: 100vw — poteva causare overflow orizzontale con le scrollbar */
+    overflow-y: visible; /* prima: overflow: hidden — tagliava i testi che eccedevano */
+    overflow-x: hidden;
+    background-color: var(--color-bg);
+    padding: 8vh 1.25rem calc(3rem + env(safe-area-inset-bottom)) 1.25rem; /* padding top ridotto e bottom con safe-area per notch/home bar */
+    box-sizing: border-box;
+}
+
+.aurora-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+/* Gauzy, low-opacity glows rather than solid discs — leggermente più intense sul fondo scuro */
+.aurora-blob-1 {
+    position: absolute;
+    top: -25%;
+    left: 25%;
+    height: 24rem; /* Equivalente a h-96 in Tailwind */
+    width: 24rem;
+    border-radius: 50%;
+    background-color: var(--color-gold); /* Regola il colore qui */
+    opacity: 0.28; /* ridotta rispetto al tema chiaro per non "sbiancare" troppo il fondo scuro */
+    filter: blur(64px); /* Equivalente a blur-3xl */
+    animation: aurora-1 20s ease-in-out infinite;
+}
+
+.aurora-blob-2 {
+    position: absolute;
+    bottom: -25%;
+    right: 25%;
+    height: 24rem;
+    width: 24rem;
+    border-radius: 50%;
+    background-color: var(--color-sage);
+    filter: blur(64px);
+    opacity: 0.4;
+    animation: aurora-2 20s ease-in-out infinite;
+}
+
+.aurora-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+}
+
+/* =====================================================  *
+ * Avatar Animation                                       *
+ * ====================================================== */
+
+/* --- STILE DELL'AVATAR (TIMELINE IN 2 FASI) --- */
+.avatar-wrapper {
+    margin: 0 auto 1rem auto; 
+    filter: drop-shadow(0px 5px 14px rgba(0, 0, 0, 0.6));
+    
+    /* Parte nascosto e grande (Fase 1) */
+    opacity: 0;
+    height: clamp(180px, 34vh, 320px); /* prima: 320px fisso — su schermi bassi spingeva i testi fuori viewport */
+    
+    /* L'intera sequenza dura 3.5 secondi */
+    animation: avatarCinematic 5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.avatar-img {
+    height: 100%;
+    width: auto;
+    max-width: 90vw; /* evita overflow orizzontale su schermi molto stretti */
+    object-fit: contain; 
+}
+
+@keyframes avatarCinematic {
+    /* -- FASE 1: COMPARSA ELASTICA (0s - 0.5s) -- */
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(50px);
+        height: clamp(180px, 34vh, 320px); /* Rimane grande, coerente col wrapper */
+    }
+    10% {
+        opacity: 1;
+        transform: scale(1.05) translateY(-10px);
+        height: clamp(180px, 34vh, 320px);
+    }
+    15% {
+        transform: scale(1) translateY(0);
+        height: clamp(180px, 34vh, 320px);
+    }
+    
+    /* -- PAUSA: TU E IL "CIAO" SIETE AL CENTRO (0.5s - 2.2s) -- */
+    65% {
+        transform: scale(1) translateY(0);
+        height: clamp(180px, 34vh, 320px);
+    }
+    
+    /* -- FASE 2: RESTRINGIMENTO PER FARE SPAZIO AL TESTO (2.2s - 3.5s) -- */
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        height: clamp(150px, 16vh, 200px); /* prima: 120px fisso — reso proporzionale */
+        filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.6));
+    }
+}
+
+/* ====================================================== *
+ * Topic Animation                                        *
+ * ====================================================== */
+
+.topic-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* prima: center — con contenuti lunghi "center" può spingere l'inizio del testo sopra il bordo visibile */
+    min-height: 100dvh; /* prima: height: 100vh — non permetteva al contenuto di eccedere ed essere raggiunto con lo scroll */
+    width: 100%;
+    padding: calc(2rem + env(safe-area-inset-top)) 1.25rem calc(2.5rem + env(safe-area-inset-bottom)) 1.25rem;
+    box-sizing: border-box;
+    overflow-y: visible;
+}
+
+.topic-image-wrapper {
+    width: min(280px, 78vw); /* prima: 280px fisso — poteva eccedere su schermi molto stretti (<320px) */
+    height: auto;
+    aspect-ratio: 7 / 6; /* mantiene la proporzione originale 280/240 senza altezza fissa */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-line);
+}
+
+.topic-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.topic-text-wrapper {
+    margin-top: clamp(2rem, 6vh, 3.5rem); /* prima: 3.5rem fisso — ridotto su schermi bassi */
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+.topic-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 6vw, 2rem); /* prima: 2rem fisso — si adatta a schermi molto stretti */
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
+    margin-bottom: clamp(1.5rem, 4vh, 2.5rem);
+    position: relative;
+    padding-bottom: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+
+/* quiet rule beneath the title instead of raw whitespace */
+.topic-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--color-gold);
+    opacity: 0.7;
+}
+
+.topic-section h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.6rem;
+}
+
+.topic-section p {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--color-muted);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+
+.topic-dedication {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--color-ink) !important;
+}
+
+/* --- Topic-specific animations --- */
+
+@keyframes slideUpImage {
+    0% {
+        transform: translateY(100px) scale(1.6);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+.animate-slide-up {
+    animation: slideUpImage 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInTextTopic {
+    0% {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-delayed {
+    opacity: 0;
+    animation: fadeInTextTopic 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+/* ====================================================== *
+ * Adattamenti extra per schermi molto piccoli/bassi       *
+ * ====================================================== */
+
+@media (max-height: 650px) {
+    .aurora-container {
+        padding-top: 5vh;
+    }
+    .avatar-wrapper {
+        height: clamp(140px, 28vh, 260px);
+    }
+}
+
+@media (max-width: 360px) {
+    .welcome-title {
+        font-size: 2.3rem;
+    }
+    .topic-title {
+        font-size: 1.4rem;
+    }
+}
