@@ -45,7 +45,7 @@
         "cugina-susanna": {
             "name": "Susi",
             "concept": "Algoritmo Ricorsivo",
-            "image": "./resources/img/topics/recursive-algorithm.png",
+            "image": "./resources/img/topics/recursive-algorithm.jpg",
             "explanation": "È una tecnica molto elegante in cui un'istruzione, per funzionare, chiama se stessa. È un po' come mettersi in mezzo a due specchi e vedere la propria immagine ripetersi all'infinito.",
             "dedication": "L'ho scelta ripensando a noi che cantavamo \"pace sia, pace a voi...\". Una strofa sembrava chiamare per magia quella successiva, in un circolo senza fine. Senza saperlo, eravamo già dei piccoli esperti di ricorsione!"
         },
