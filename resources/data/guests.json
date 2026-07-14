@@ -2,10 +2,10 @@
     "guests": {
         "adele": {
             "name": "Adele",
-            "concept": "Firewall",
-            "image": "./resources/img/topics/firewall.jfif",
-            "explanation": "È un muro protettivo, un vero e proprio \"cane da guardia\" digitale che ringhia e blocca chiunque cerchi di entrare in un sistema senza permesso. L'unico modo per passare è chiedere l'autorizzazione all'amministratore capo.",
-            "dedication": "Un po' come quando da piccolo giocavo a pallone in giardino e mi finiva sempre nel vostro cortile. Tu eri l'amministratore capo: ti chiamavo per riprenderla, perché avevo paura del Firewall Breck!"
+            "concept": "Interrupt di Sistema",
+            "image": "./resources/img/topics/system-interrupt.webp",
+            "explanation": "È un segnale speciale che dice al computer di fermare immediatamente quello che sta facendo, anche se è importantissimo. Il sistema mette tutto in pausa, gestisce l'imprevisto appena arrivato e, solo dopo averlo risolto, torna a fare le sue cose da dove le aveva lasciate.",
+            "dedication": "L'ho scelto pensando a tutte le volte che la mia palla finiva nel tuo cortile. Ero il tuo \"interrupt\" personale! Ti costringevo a mettere in pausa le tue attività per gestire la mia emergenza e ridarmi il pallone, per poi farti tornare con pazienza alle tue faccende."
         },
         "anita": {
             "name": "Anita",
@@ -23,16 +23,23 @@
         },
         "cugina-chiara": {
             "name": "Chiara",
-            "concept": "Le Chaton Fat",
-            "image": "./resources/img/topics/le-chaton-fat.png",
-            "explanation": "È una divertente leggenda metropolitana nel mondo dell'Intelligenza Artificiale. Qualcuno su internet si è inventato per scherzo l'esistenza di questo finto e potentissimo modello francese chiamato, appunto, \"Le Chaton Fat\" (Il Gattino Grasso), facendolo diventare un meme.",
-            "dedication": "Ho pensato subito alle risate che ci facevamo con la Cipi. Molto prima che agli esperti di computer venisse in mente di inventare un gatto grasso virtuale, noi avevamo già il nostro inimitabile originale in casa!"
+            "concept": "Circuito Aperto",
+            "image": "./resources/img/topics/open-circuit.webp",
+            "explanation": "In elettrotecnica, è un'interruzione fisica lungo il percorso in cui dovrebbe scorrere l'elettricità. Anche se c'è tantissima tensione accumulata ai due capi, questa interruzione impedisce del tutto il passaggio di corrente, isolando i due lati in modo assoluto.",
+            "dedication": "Rappresenta alla perfezione la tua strategia di difesa! Dal giardino Athos genera una \"tensione\" incredibile per fare la corte a Minou sul tetto, ma tu hai installato un perfetto circuito aperto. Tenendola al sicuro in casa, hai interrotto il percorso e bloccato qualsiasi flusso di corrente amorosa a zero."
         },
         "cugina-jessica": {
             "name": "Jessy",
             "concept": "concept",
             "explanation": "explanation",
             "dedication": "dedication"
+        },
+        "cugina-silvia": {
+            "name": "Sissi",
+            "concept": "Le Chaton Fat",
+            "image": "./resources/img/topics/le-chaton-fat.png",
+            "explanation": "È una divertente leggenda metropolitana nel mondo dell'Intelligenza Artificiale. Qualcuno su internet si è inventato per scherzo l'esistenza di questo finto e potentissimo modello francese chiamato, appunto, \"Le Chaton Fat\" (Il Gattino Grasso), facendolo diventare un meme.",
+            "dedication": "Gli ingegneri avranno anche inventato 'Le Chaton Fat' per finta, ma tu stavi già addestrando a suon di crocchette il tuo inimitabile modello gigante da salotto, Chubby!"
         },
         "cugina-susanna": {
             "name": "Susi",
@@ -54,6 +61,13 @@
             "image": "./resources/img/topics/asymptote.webp",
             "explanation": "È una linea dritta a cui una curva si avvicina sempre di più, all'infinito, ma per quanto ci provi non riuscirà a toccarla o superarla mai.",
             "dedication": "Rappresenta perfettamente le tue prestazioni sui kart. Puoi impegnarti al massimo, accelerare e avvicinarti sempre di più al mio tempo giro dopo giro... ma la verità è che non lo raggiungerai mai!"
+        },
+        "federico": {
+            "name": "Federico",
+            "concept": "Greedy Algorithm",
+            "image": "./resources/img/topics/greedy-algorithm.webp",
+            "explanation": "In informatica è letteralmente l'\"algoritmo goloso\". Quando deve prendere una decisione, non sta a pensare troppo al futuro: sceglie semplicemente la soluzione che gli sembra più grande, ricca e appetitosa in quel preciso momento, prendendosela subito.",
+            "dedication": "L'ho scelto perché quando a fine pasto compare un vassoio di dolci, tu funzioni esattamente con questa logica! Nessun piano strategico a lungo termine: i tuoi occhi puntano dritti alla fetta di torta più grande e golosa, e la tua unica missione è prenderla prima degli altri."
         },
         "mamma": {
             "name": "Mamma",

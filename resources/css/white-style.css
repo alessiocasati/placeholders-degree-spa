@@ -18,7 +18,7 @@
     --color-ink: #2a241d;
     --color-muted: #6e6255;
     --color-gold: #b08d57;
-    --color-sage: #9e974ab9;
+    --color-sage: #9e974a98;
     --color-rose: #c89aa0;
     --color-line: rgba(42, 36, 29, 0.1);
 
@@ -250,26 +250,9 @@ body {
     100% {
         opacity: 1;
         transform: scale(1) translateY(0);
-        height: clamp(90px, 16vh, 120px); /* prima: 120px fisso — reso proporzionale */
+        height: clamp(150px, 16vh, 200px); /* prima: 120px fisso — reso proporzionale */
         filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.4));
     }
-}
-
-/* --- SINCRONIZZAZIONE TESTI --- */
-
-/* Appare subito dopo che l'avatar è saltato fuori (Fase 1) */
-.delay-text-1 { 
-    animation-delay: 0.5s; 
-} 
-
-/* Appare mentre ti stai restringendo, scivolando sotto il titolo (Fase 2) */
-.delay-text-2 { 
-    animation-delay: 2.8s; 
-} 
-
-/* La scritta pulsante che invita al click appare per ultima */
-.delay-text-3 { 
-    animation-delay: 4.0s; 
 }
 
 /* ====================================================== *
@@ -323,6 +306,7 @@ body {
     margin-bottom: clamp(1.5rem, 4vh, 2.5rem);
     position: relative;
     padding-bottom: 1.25rem;
+    margin-bottom: 2.5rem;
 }
 
 /* quiet rule beneath the title instead of raw whitespace */
@@ -339,7 +323,7 @@ body {
 }
 
 .topic-section h3 {
-    font-size: 0.78rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--color-gold);
     text-transform: uppercase;
@@ -352,7 +336,7 @@ body {
     font-weight: 400;
     color: var(--color-muted);
     line-height: 1.7;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .topic-dedication {

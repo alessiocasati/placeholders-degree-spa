@@ -1,7 +1,7 @@
 {
     "welcome": {
         "title": "Ciao",
-        "subtitle": "Non potevo fare un segnaposto normale.\nPer questo, ho deciso di associarti ad un argomento che ha segnato i miei studi!",
+        "subtitle": "Grazie per essere qui.\nCome segnaposto, ho deciso di dedicarti un concetto che ha segnato i miei studi!",
         "cta": "Tocca lo schermo per scoprire il tuo argomento",
         "avatar": "./resources/img/avatar/alessio-avatar.png"
     },
